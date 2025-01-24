@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="./styles/starndard.css" />
     <link rel="stylesheet" href="./fonts.css">
     <link rel="icon" href="./assets/icons/bookIcon_whiteBg.png" />
+    <script src="./script.js" defer></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./data/books.js"></script>
     <title>Book Store</title>
   </head>
-  <body>
+  <body onload="init()">
     <header>
       <div class="center-content">
         <div class="max-width-1440px">
@@ -28,7 +31,8 @@
         </div>
       </div>
     </header>
-    <section>Bücher</section>
+    <section id="content">
+    </section>
     <footer></footer>
   </body>
 </html>
