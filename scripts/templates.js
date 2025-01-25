@@ -1,5 +1,5 @@
 function getBookTemplate(indexObject) {
   return `
-  <div> ${books[indexObject].name}</div>
+  <div class='book-card'> <b>${books[indexObject].name} </b></div>
   `;
 }
