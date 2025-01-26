@@ -1,0 +1,20 @@
+.book-card {
+  height: 640px;
+  width: 400px;
+  border-radius: 10%;
+  background-color: #0f404f;
+}
+
+.hr-book-card {
+  border: 1px solid #3bc7f2;
+}
+
+.book-card-title {
+  text-align: center;
+  padding: 16px 16px;
+}
+
+.book-card-img {
+  height: 96px;
+  width: 96px;
+}
