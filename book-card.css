@@ -12,6 +12,7 @@
 .book-card-title {
   text-align: center;
   padding: 16px 16px;
+  font-size: 20px;
 }
 
 .book-card-img {
@@ -20,4 +21,18 @@
 }
 
 .price-like {
+}
+
+@media (max-width: 536px) {
+  .book-card {
+    height: 480px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 384px) {
+  .book-card {
+    height: 480px;
+    width: 268px;
+  }
 }
