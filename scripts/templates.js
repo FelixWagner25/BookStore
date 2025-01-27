@@ -17,6 +17,7 @@ function getBookTemplate(indexObject) {
   <img class='like-img' src="../assets/img/RedHeartEmpty_MaterialIcons.png">
   </div>
   </div>
+  <br>
   <div class='book-info book-card-pd-lr'>
   <b>Author</b>:
   <span>${books[indexObject].author}</span>
@@ -32,9 +33,20 @@ function getBookTemplate(indexObject) {
   <br>
   <div class='book-comments book-card-pd-lr'>
   </div>
-  <br>
-  <hr class='hr-book-card'>
-  <br>
   </div>
   `;
+}
+
+function getBookComments(indexObject) {
+  let allBookComments = [];
+  for (
+    let indexComment = 0;
+    indexComment < books[indexObject].comments.length;
+    indexComment++
+  ) {
+    let commentName = books[indexObject].comments[indexComment].name;
+    let commentText = books[indexObject].comments[indexComment].comment;
+    allBookComments.push({ name: commentName, comment: commentText });
+  }
+  return console.table(allBookComments);
 }

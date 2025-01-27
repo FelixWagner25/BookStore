@@ -9,3 +9,5 @@ function loadBooks() {
     contentRef.innerHTML += getBookTemplate(indexBook);
   }
 }
+
+getBookTemplate(0);
