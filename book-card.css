@@ -21,6 +21,26 @@
 }
 
 .price-like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.heart-counter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.like-img {
+  height: 40px;
+}
+
+.book-info {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 @media (max-width: 536px) {

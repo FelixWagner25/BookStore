@@ -11,6 +11,14 @@ function getBookTemplate(indexObject) {
   <hr class='hr-book-card'>
   <br>
   <div class='price-like'>
+  <b class='color-red'>${books[indexObject].price} EUR</b>
+  <div class='heart-counter'>
+  ${books[indexObject].likes}
+  <img class='like-img' src="../assets/img/RedHeartEmpty_MaterialIcons.png">
+  </div>
+  </div>
+  <div class='book-info'>
+  <b>${books[indexObject].author}</b>
   </div>
   <br>
   <hr class='hr-book-card'>
