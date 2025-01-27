@@ -31,13 +31,15 @@ function getBookTemplate(indexObject) {
   <br>
   <b class='book-card-pd-lr'>Kommentare:</b>
   <br>
-  <div class='book-comments book-card-pd-lr'>
+  <div id=${
+    "book-comments" + indexObject
+  } class='book-comments book-card-pd-lr'>
   </div>
   </div>
   `;
 }
 
-function getBookComments(indexObject) {
+function getBookCommentsTemplate(indexObject) {
   let allBookComments = [];
   for (
     let indexComment = 0;
