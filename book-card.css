@@ -53,6 +53,11 @@
   display: grid;
   grid-template-columns: max-content max-content max-content;
   gap: 8px;
+  overflow-wrap: break-word;
+}
+
+.break-word {
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 536px) {
