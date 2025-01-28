@@ -13,10 +13,10 @@ function getBookTemplate(indexObject) {
   <div class='price-like book-card-pd-lr'>
   <b class='color-red'>${books[indexObject].price} EUR</b>
   <div class='heart-counter'>
-  ${books[indexObject].likes}
+  <span id=${"like-count" + indexObject}></span>
   <img id=${
     "like-img" + indexObject
-  } class='like-img' src="./assets/img/RedHeartEmptyMaterialIcons.png">
+  } class='like-img' src="./assets/img/RedHeartEmptyMaterialIcons.png" onclick="toggleLike(${indexObject})">
   </div>
   </div>
   <br>
