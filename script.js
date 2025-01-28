@@ -59,12 +59,14 @@ function getLikesCount(indexBook) {
 function addLike(indexBook) {
   let currentLikesNumber = getLikesCount(indexBook);
   let newLikesNumber = parseInt(currentLikesNumber) + 1;
+  books[indexBook].likes = newLikesNumber;
   return newLikesNumber;
 }
 
 function subtractLike(indexBook) {
   let currentLikesNumber = getLikesCount(indexBook);
   let newLikesNumber = parseInt(currentLikesNumber) - 1;
+  books[indexBook].likes = newLikesNumber;
   return newLikesNumber;
 }
 
