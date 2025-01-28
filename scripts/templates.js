@@ -6,7 +6,7 @@ function getBookTemplate(indexObject) {
   </div>
   <hr class='hr-book-card'>
   <br>
-  <img src='../assets/img/iconmonstr-book-2-240.png' class='center book-card-img'>
+  <img src='./assets/img/iconmonstr-book-2-240.png' class='center book-card-img'>
   <br>
   <hr class='hr-book-card'>
   <br>
@@ -14,7 +14,9 @@ function getBookTemplate(indexObject) {
   <b class='color-red'>${books[indexObject].price} EUR</b>
   <div class='heart-counter'>
   ${books[indexObject].likes}
-  <img class='like-img' src="../assets/img/RedHeartEmpty_MaterialIcons.png">
+  <img id=${
+    "like-img" + indexObject
+  } class='like-img' src="./assets/img/RedHeartEmptyMaterialIcons.png">
   </div>
   </div>
   <br>

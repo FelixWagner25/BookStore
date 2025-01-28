@@ -25,3 +25,15 @@ function loadBooks() {
     }
   }
 }
+
+function toogleLike() {}
+
+function getLikeStatus(indexBook) {
+  return books[indexBook].liked;
+}
+
+function getLikesCount(indexBook) {
+  return books[indexBook].likes;
+}
+
+function toolgeLikeImg(indexBook) {}
