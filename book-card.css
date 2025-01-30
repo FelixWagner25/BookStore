@@ -60,6 +60,14 @@
   overflow-wrap: break-word;
 }
 
+.comment-form {
+  display: flex;
+}
+
+.comment-input {
+  flex-grow: 1;
+}
+
 @media (max-width: 536px) {
   .book-card {
     height: 480px;

@@ -37,6 +37,11 @@ function getBookTemplate(indexObject) {
     "book-comments" + indexObject
   } class='book-comments book-card-pd-lr'>
   </div>
+  <br>
+  <form class='book-card-pd-lr comment-form'>
+  <input class='comment-input' type='text' placeholder='Schreibe dein Kommentar'>
+  <button><img src='./assets/icons/send.png'></button>
+  </form>
   </div>
   `;
 }
