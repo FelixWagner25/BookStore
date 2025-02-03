@@ -39,31 +39,17 @@ function getBookTemplate(indexObject) {
   </div>
   <br>
   <form class='book-card-pd-lr comment-form'>
-  <input class='comment-input' type='text' placeholder='Schreibe dein Kommentar'>
+  <input class='comment-input' type='text' placeholder='Schreibe dein Kommentar ...'>
   <button class='comment-send-btn'><img src='./assets/icons/send.png'></button>
   </form>
   </div>
   `;
 }
 
-// function getBookCommentsTemplate(indexObject) {
-//   let allBookComments = [];
-//   for (
-//     let indexComment = 0;
-//     indexComment < books[indexObject].comments.length;
-//     indexComment++
-//   ) {
-//     let commentName = books[indexObject].comments[indexComment].name;
-//     let commentText = books[indexObject].comments[indexComment].comment;
-//     allBookComments.push({ name: commentName, comment: commentText });
-//   }
-//   return console.table(allBookComments);
-//}
-
 function getBookCommentLineTemplate(indexBook, indexComment) {
   let commentName = books[indexBook].comments[indexComment].name;
   let commentText = books[indexBook].comments[indexComment].comment;
   return `
-  <span>[${commentName}]:</span><span class='break-word'>${commentText}</span> <br>
+  <span>[${commentName}]:</span><span>${commentText}</span> <br>
   `;
 }

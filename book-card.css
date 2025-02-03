@@ -58,10 +58,6 @@
   scrollbar-color: #3bc7f2 #0f404f;
 }
 
-.break-word {
-  overflow-wrap: break-word;
-}
-
 .comment-form {
   display: flex;
 }

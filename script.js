@@ -1,5 +1,6 @@
 function init() {
   loadBooks();
+  loadLocalStorage();
 }
 
 function loadBooks() {
