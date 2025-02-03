@@ -32,9 +32,12 @@ function loadBooks() {
 
 function toggleLike(indexBook) {
   toggleLikeStatusJSONAndUpdateCounter(indexBook);
+
   let likeStatus = getLikeStatus(indexBook);
   setLikeImg(indexBook, likeStatus);
   setLikesCount(indexBook);
+  saveLikesCountToLocalStorage();
+  saveLikeStatusToLocalStorage();
 }
 
 function getLikeStatus(indexBook) {
@@ -94,4 +97,37 @@ function postComment(indexBook) {
   let bookCommentsRef = document.getElementById(bookCommentsTagId);
   bookCommentsRef.innerHTML =
     addBookCommentLine(commentName, commentText) + bookCommentsRef.innerHTML;
+  addCommentToJSON(indexBook, commentName, commentText);
+  saveBookCommentsToLocalStroage();
+}
+
+function saveLikeStatusToLocalStorage() {
+  let currentLikeStatus = [];
+  for (let indexBook = 0; indexBook < books.length; indexBook++) {
+    currentLikeStatus[indexBook] = books[indexBook].liked;
+  }
+  localStorage.setItem("likeStatus", JSON.stringify(currentLikeStatus));
+}
+
+function saveLikesCountToLocalStorage() {
+  let currentLikesCount = [];
+  for (let indexBook = 0; indexBook < books.length; indexBook++) {
+    currentLikesCount[indexBook] = books[indexBook].likes;
+  }
+  localStorage.setItem("likesCount", JSON.stringify(currentLikesCount));
+}
+
+function saveBookCommentsToLocalStroage() {
+  let currentBookComments = [];
+  for (let indexBook = 0; indexBook < books.length; indexBook++) {
+    currentBookComments[indexBook] = books[indexBook].comments;
+  }
+  localStorage.setItem("bookComments", currentBookComments);
+}
+
+function addCommentToJSON(indexBook, commentName, commentText) {
+  books[indexBook].comments.unshift({
+    name: String(commentName),
+    comment: String(commentText),
+  });
 }
