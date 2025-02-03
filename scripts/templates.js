@@ -40,7 +40,7 @@ function getBookTemplate(indexObject) {
   <br>
   <form class='book-card-pd-lr comment-form'>
   <input class='comment-input' type='text' placeholder='Schreibe dein Kommentar'>
-  <button><img src='./assets/icons/send.png'></button>
+  <button class='comment-send-btn'><img src='./assets/icons/send.png'></button>
   </form>
   </div>
   `;
@@ -64,6 +64,6 @@ function getBookCommentLineTemplate(indexBook, indexComment) {
   let commentName = books[indexBook].comments[indexComment].name;
   let commentText = books[indexBook].comments[indexComment].comment;
   return `
-  <span class='break-word'>[${commentName}]</span> : <span class='break-word'>${commentText}</span>
+  <span>[${commentName}]:</span><span class='break-word'>${commentText}</span> <br>
   `;
 }
