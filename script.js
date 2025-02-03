@@ -1,6 +1,5 @@
 function init() {
   loadBooks();
-  loadLocalStorage();
 }
 
 function loadBooks() {
@@ -84,4 +83,15 @@ function setLikeImg(indexBook, likeStatus) {
   } else {
     likeImgRef.src = "./assets/img/RedHeartEmptyMaterialIcons.png";
   }
+}
+
+function postComment(indexBook) {
+  let commentName = "UnkownUser";
+  let inputTagId = String("comment-input" + indexBook);
+  let commentText = document.getElementById(inputTagId).value;
+
+  let bookCommentsTagId = String("book-comments" + indexBook);
+  let bookCommentsRef = document.getElementById(bookCommentsTagId);
+  bookCommentsRef.innerHTML =
+    addBookCommentLine(commentName, commentText) + bookCommentsRef.innerHTML;
 }
