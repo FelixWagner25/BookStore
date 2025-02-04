@@ -1,4 +1,7 @@
 function init() {
+  getPropertyFromLocalStorage("likeStatus", "liked");
+  getPropertyFromLocalStorage("likesCount", "likes");
+  getPropertyFromLocalStorage("bookComments", "comments");
   loadBooks();
 }
 
@@ -98,7 +101,7 @@ function postComment(indexBook) {
   bookCommentsRef.innerHTML =
     addBookCommentLine(commentName, commentText) + bookCommentsRef.innerHTML;
   addCommentToJSON(indexBook, commentName, commentText);
-  saveBookCommentsToLocalStroage();
+  saveBookCommentsToLocalStorage();
 }
 
 function saveLikeStatusToLocalStorage() {
@@ -117,12 +120,12 @@ function saveLikesCountToLocalStorage() {
   localStorage.setItem("likesCount", JSON.stringify(currentLikesCount));
 }
 
-function saveBookCommentsToLocalStroage() {
+function saveBookCommentsToLocalStorage() {
   let currentBookComments = [];
   for (let indexBook = 0; indexBook < books.length; indexBook++) {
     currentBookComments[indexBook] = books[indexBook].comments;
   }
-  localStorage.setItem("bookComments", currentBookComments);
+  localStorage.setItem("bookComments", JSON.stringify(currentBookComments));
 }
 
 function addCommentToJSON(indexBook, commentName, commentText) {
@@ -130,4 +133,17 @@ function addCommentToJSON(indexBook, commentName, commentText) {
     name: String(commentName),
     comment: String(commentText),
   });
+}
+
+function getPropertyFromLocalStorage(localStorageKey, booksKey) {
+  let localStorageItem = localStorage.getItem(localStorageKey);
+  if (localStorageItem === null) {
+    return;
+  } else {
+    let properties = JSON.parse(localStorageItem);
+    for (let indexBook = 0; indexBook < books.length; indexBook++) {
+      books[indexBook][booksKey] = properties[indexBook];
+      console.table(books[indexBook][booksKey]);
+    }
+  }
 }
