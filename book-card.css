@@ -90,8 +90,24 @@
 
 @media (max-width: 536px) {
   .book-card {
-    height: 480px;
-    width: 300px;
+    height: 560px;
+    width: 360px;
+  }
+  .book-card-img {
+    height: 48px;
+    width: 48px;
+  }
+  .book-card-title {
+    text-align: center;
+    font-size: 16px;
+  }
+  .book-info {
+    text-align: center;
+    font-size: 14px;
+  }
+  .book-comments {
+    font-size: 14px;
+    height: 88px;
   }
 }
 
@@ -99,5 +115,19 @@
   .book-card {
     height: 480px;
     width: 268px;
+  }
+  .book-info {
+    text-align: center;
+    font-size: 12px;
+  }
+  .book-comments {
+    font-size: 12px;
+    height: 24px;
+  }
+  .price-like {
+    font-size: 12px;
+  }
+  .like-img {
+    height: 24px;
   }
 }
