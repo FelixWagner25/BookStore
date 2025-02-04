@@ -147,7 +147,6 @@ function getPropertyFromLocalStorage(localStorageKey, booksKey) {
     let properties = JSON.parse(localStorageItem);
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
       books[indexBook][booksKey] = properties[indexBook];
-      console.table(books[indexBook][booksKey]);
     }
   }
 }
