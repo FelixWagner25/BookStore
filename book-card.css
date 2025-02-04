@@ -116,13 +116,18 @@
     height: 480px;
     width: 268px;
   }
+  .book-card-img {
+    height: 40px;
+    width: 40px;
+  }
   .book-info {
     text-align: center;
     font-size: 12px;
+    gap: 4px;
   }
   .book-comments {
     font-size: 12px;
-    height: 24px;
+    height: 32px;
   }
   .price-like {
     font-size: 12px;

@@ -12,24 +12,28 @@ function loadBooks() {
   for (let indexBook = 0; indexBook < books.length; indexBook++) {
     contentRef.innerHTML += getBookTemplate(indexBook);
 
-    let bookCommentRefId = String("book-comments" + indexBook);
-    let bookCommentRef = document.getElementById(bookCommentRefId);
-    bookCommentRef.innerHTML = "";
-
-    for (
-      let indexComment = 0;
-      indexComment < books[indexBook].comments.length;
-      indexComment++
-    ) {
-      bookCommentRef.innerHTML += getBookCommentLineTemplate(
-        indexBook,
-        indexComment
-      );
-    }
+    loadBookComments(indexBook);
 
     let currentLikeStatus = getLikeStatus(indexBook);
     setLikeImg(indexBook, currentLikeStatus);
     setLikesCount(indexBook);
+  }
+}
+
+function loadBookComments(indexBook) {
+  let bookCommentRefId = String("book-comments" + indexBook);
+  let bookCommentRef = document.getElementById(bookCommentRefId);
+  bookCommentRef.innerHTML = "";
+
+  for (
+    let indexComment = 0;
+    indexComment < books[indexBook].comments.length;
+    indexComment++
+  ) {
+    bookCommentRef.innerHTML += getBookCommentLineTemplate(
+      indexBook,
+      indexComment
+    );
   }
 }
 
